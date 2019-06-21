@@ -1,0 +1,53 @@
+<div class="form-group">
+
+  <div class="row pt-4 pl-3">
+    <div class="col-sm-1">
+      <label>Keyword:</label>
+    </div>
+    <div class="col-sm-4">
+      <input [(ngModel)]="InputKeyword" type="email" class="form-control" placeholder="keyword">
+    </div>
+    <div class="col-sm-1">
+      <input class="btn btn-primary" type="submit" value="Add" (click)="onAddClick()">
+    </div>
+  </div>
+  
+  <div class="row pt-4 pl-3">
+    <div class="col-sm-2">
+      <label>Delete Keyword:</label>
+    </div>
+    <div class="col-sm-3">
+      <select [(ngModel)]="DeleteKeyword" (ngModelChange)="onDropdownUpdate()" class="form-control">
+        <option *ngFor="let keyword of Keywords">{{keyword}}</option>
+      </select>
+    </div>
+    <div class="col-sm-1">
+      <input class="btn btn-danger" type="submit" value="Remove" (click)="deleteKeyword()">
+    </div>
+  </div>
+
+  <div class="row pt-4 pl-3">
+    <div class="col-sm-2">
+      <label>Change Keyword: </label>
+    </div>
+    <div class="col-sm-1">
+      <label>From</label>
+    </div>
+    <div class="col-sm-3">
+      <select [(ngModel)]="ChangeFromKeyword" (ngModelChange)="onChangeFromUpdate()" class="form-control">
+        <option *ngFor="let keyword of Keywords">{{keyword}}</option>
+      </select>
+    </div>
+    <div class="col-sm-1">
+      <label>To</label>
+    </div>
+    <div class="col-sm-3">
+      <input [(ngModel)]="ChangeToKeyword" type="email" class="form-control" placeholder="keyword">
+    </div>
+
+    <div class="col-sm-1">
+      <input class="btn btn-warning" type="submit" value="Change" (click)="onChangeClick()">
+    </div>
+  </div>
+
+</div>
