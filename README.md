@@ -1,7 +1,8 @@
 # FoodSearchApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.3.
-This Angular project contains two components - search and map.  Search components subscribes the REST API service, while map components generates the Google Map as a variable.
+
+This Angular project contains two components - search and map.  Search components subscribes to the REST API service, while map components generates the Google Map as a variable.
 
 ## Development server
 
