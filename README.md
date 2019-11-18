@@ -2,6 +2,12 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.3.
 
+This Angular project contains two components - search and map.  Search component subscribes to the REST API service that fetches data from the SQL database, while map components generate the Google Map as a variable.
+
+## SQL server (For REST API)
+
+Run `npm start` on the server\app.js.  The server will be set in `http://localhost:3000/`.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
