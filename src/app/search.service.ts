@@ -11,6 +11,7 @@ export class SearchService {
 
   }
 
+  //The services for REST API:
   setKeyword(keyword): Observable<any> {
     let token = localStorage.getItem('token') ? localStorage.getItem('token') : 'abcd';
     let httpOptions = {
