@@ -35,7 +35,7 @@
     </div>
     <div class="col-sm-3">
       <select [(ngModel)]="ChangeFromKeyword" (ngModelChange)="onChangeFromUpdate()" class="form-control">
-        <option *ngFor="let keyword of Keywords">{{keyword}}</option>
+        <option *ngFor="let keyword of Keywords" [ngValue]="keyword">{{keyword}}</option>
       </select>
     </div>
     <div class="col-sm-1">

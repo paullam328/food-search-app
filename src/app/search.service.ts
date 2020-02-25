@@ -14,12 +14,14 @@ export class SearchService {
   //The services for REST API:
   setKeyword(keyword): Observable<any> {
     let token = localStorage.getItem('token') ? localStorage.getItem('token') : 'abcd';
+    
     let httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
         'token': token,
       })
     };
+
     let jsonData = {'keyword': keyword};
     return this._http.post("http://localhost:3000/post", jsonData, httpOptions);
   }
@@ -29,7 +31,7 @@ export class SearchService {
     let httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
-        'token': token,
+        'token': token
       })
     };
     return this._http.get("http://localhost:3000/get", httpOptions);
@@ -37,6 +39,7 @@ export class SearchService {
 
   deleteKeyword(keyword): Observable<any> {
     let token = localStorage.getItem('token') ? localStorage.getItem('token') : 'abcd';
+    
     let httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
@@ -46,12 +49,13 @@ export class SearchService {
         'keyword': keyword
       }
     };
-    return this._http.delete("http://localhost:3000/delete", httpOptions);
+    return this._http.delete("http://localhost:3000/delete", httpOptions);    
   }
 
   putKeyword(ChangeFromKeyword, ChangeToKeyword): Observable<any> {
     let token = localStorage.getItem('token') ? localStorage.getItem('token') : 'abcd';
-    let httpOptions = {
+    
+      let httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
         'token': token,
@@ -62,5 +66,6 @@ export class SearchService {
       'ChangeToKeyword': ChangeToKeyword
     };
     return this._http.put("http://localhost:3000/put", jsonData , httpOptions);
+    
   }
 }

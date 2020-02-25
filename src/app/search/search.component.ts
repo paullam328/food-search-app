@@ -28,7 +28,7 @@ export class SearchComponent implements OnInit {
   //InputAction for clicking the 'Add' button
   onAddClick(){
     this.searchService.setKeyword(this.InputKeyword).subscribe((response) => {
-      console.log("subscribed!");
+      
       //Asynchronous, so after callback, get all the keywords to display everything
       this.getKeywords();//then, get an updated list of keywords
     })
@@ -40,9 +40,12 @@ export class SearchComponent implements OnInit {
     //Subscribe to the keywords array and store them:
     this.searchService.getKeywords().subscribe((response) => {
 
+      // node.js is .data, spring just response:
+      var data = (response.data) ? response.data : response;
+
       //for each keyword, push it into an array of keywords:
-      for (var i:number = 0; i < response.data.length; i++) {
-        this.Keywords.push(response.data[i].keyword);
+      for (var i:number = 0; i < data.length; i++) {
+        this.Keywords.push(data[i].keyword);
       }
 
       this.data.changeKeywords(this.Keywords);
@@ -71,6 +74,7 @@ export class SearchComponent implements OnInit {
   
   //InputAction for clicking the 'Change' button
   onChangeClick(){
+    console.log("ChangeFromKeyword:" + this.ChangeFromKeyword)
     this.searchService.putKeyword(this.ChangeFromKeyword, this.ChangeToKeyword).subscribe((response) => {
 
       //Asynchronous, so after callback, get all the keywords to display everything
