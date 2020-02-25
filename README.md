@@ -4,9 +4,13 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 This Angular project contains two components - search and map.  Search component subscribes to the REST API service that fetches data from the SQL database, while map components generate the Google Map as a variable.
 
-## SQL server (For REST API)
+## Node.js server for MySQL connection (For REST API)
 
 Run `npm start` on the server\app.js.  The server will be set in `http://localhost:3000/`.
+
+## Java Spring Boot server for MySQL connection (For REST API)
+
+Run 'food-search-app/food-search-spring-server/src/main/java/com/example/foodsearchspringserver/FoodSearchSpringServerApplication.java'.  The server will be set in `http://localhost:3000/`.
 
 ## Development server
 
